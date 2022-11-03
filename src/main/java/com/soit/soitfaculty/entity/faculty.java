@@ -27,7 +27,9 @@ public class faculty {
 	private String email;
 	
 	
-
+	//set the constructors
+	
+	
 	public faculty() {
 		
 	}
@@ -38,6 +40,8 @@ public class faculty {
 		this.lastName = lastName;
 		this.email = email;
 	}
+	
+	//set the getters and setters
 
 	public int getId() {
 		return id;
@@ -71,6 +75,8 @@ public class faculty {
 		this.email = email;
 	}
 
+	//to string method
+	
 	@Override
 	public String toString() {
 		return "Faculty [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
