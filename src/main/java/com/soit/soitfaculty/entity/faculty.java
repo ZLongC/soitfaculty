@@ -23,6 +23,9 @@ public class faculty {
 	@Column(name="last_name")
 	private String lastName;
 	
+	@Column(name="Title")
+	private String title;
+	
 	@Column(name="email")
 	private String email;
 	
@@ -32,6 +35,15 @@ public class faculty {
 	
 	public faculty() {
 		
+	}
+
+	public faculty(int id, String firstName, String lastName, String title, String email) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.title = title;
+		this.email = email;
 	}
 
 	public faculty(int id, String firstName, String lastName, String email) {
@@ -77,9 +89,21 @@ public class faculty {
 
 	//to string method
 	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 	@Override
 	public String toString() {
-		return "Faculty [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+		return "faculty [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", title=" + title
+				+ ", email=" + email + ", getId()=" + getId() + ", getFirstName()=" + getFirstName()
+				+ ", getLastName()=" + getLastName() + ", getEmail()=" + getEmail() + ", getTitle()=" + getTitle()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
 	}
 
 }
