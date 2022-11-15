@@ -22,17 +22,29 @@ public class FacultyServicelmpl implements FacultyService {
 	}
 	
 	@Override
-	Public Faculty 
+	Public Faculty findById(int theId) {
+		Optional<Faculty> facultyid = facultyRepository.findById(theId);
+		
+		Faculty theFaculty = null;
+		if(facultyid.isPresent()) {
+			theFaculty = facultyid.get();
+		}
+		else {
+			//faculty not found
+			throw new RuntimeException("The FacultyId you've entered is invalid - + theId");
+		}
+		return theFaculty;
+	}
 
 	@Override
-	public void deleteById(int theId) {
-		// TODO Auto-generated method stub
+	public void save(Faculty theFaculty) {
+		facultyRepository.save(theFaculty);
 
 	}
 	
 	@Override
 	public void deleteById(int theId) {
-		// TODO Auto-generated method stub
+		facultyRepository.deleteById(theId);
 
 	}
 	
